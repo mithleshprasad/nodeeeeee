@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 const port = 4000;
 
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors());
 console.log("ZOOM_SDK_KEY",process.env.ZOOM_SDK_KEY)
 console.log(" process.env.ZOOM_SDK_SECRET", process.env.ZOOM_SDK_SECRET)
 app.get("/signature", (req, res) => {
@@ -59,3 +59,4 @@ app.get("/signature", (req, res) => {
 app.listen(port, () =>
   console.log(`✅ Zoom Signature server running on http://localhost:${port}`)
 );
+
